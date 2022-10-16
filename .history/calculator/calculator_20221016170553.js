@@ -18,7 +18,7 @@ app.post('/', function(req, res){
 app.post('/bmi', function(req, res){
     var a = parseFloat(req.body.height)
     var b = parseFloat(req.body.weight)
-    var bmi = b / (a * a)
+    var bmi = a / (b * b)
     res.send(`Your BMI is ${bmi}`)
 })
 

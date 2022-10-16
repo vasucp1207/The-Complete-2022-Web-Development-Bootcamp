@@ -15,13 +15,6 @@ app.post('/', function(req, res){
     res.send(`The sum of two num is ${sum}`)
 })
 
-app.post('/bmi', function(req, res){
-    var a = parseFloat(req.body.height)
-    var b = parseFloat(req.body.weight)
-    var bmi = b / (a * a)
-    res.send(`Your BMI is ${bmi}`)
-})
-
 app.listen(3000, () => {
     console.log('server is running on port 3000')
 })
