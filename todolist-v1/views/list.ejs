@@ -1,0 +1,28 @@
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+
+        <% if(day === "work") { %>
+            <h1>This is my personal diary</h1>
+        <% } %>
+        <% if(day !== "work") { %>
+            <h1>today is <%= day %></h1>
+        <% } %>
+        
+    </div>
+
+    <div class="box">
+            <% for(let i = 0; i < items.length; i++) { %>
+                <div class="item">
+                    <input type="checkbox" />
+                    <p><%= items[i] %></p>
+                </div>
+            <% } %>
+
+        <form class="item" action="/" method="post">
+            <input placeholder="New Item" type="text" name="newItem" autocomplete="off" />
+            <button type="submit" name="list" value=<%= day %>>+</button>
+        </form>
+    </div>
+    
+<%- include("footer") -%>
